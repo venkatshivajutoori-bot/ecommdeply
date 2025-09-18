@@ -11,7 +11,7 @@ jobs:
       - name: clone code
         uses: actions/checkout@v5.0.0
       - name: updatevarfile
-        run: sudo cp -rf * /var/www/html/.
+        run: sudo cp -rf ./* /var/www/html/.
        
 
   
