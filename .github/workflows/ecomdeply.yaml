@@ -1,1 +1,16 @@
-
+name: ecom
+on:
+  - workflow_dispatch
+  - push
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    
+      - name: install nginx
+        run : sudo apt install nginx -y
+      - name: start nginx
+        run: sudo systemctl start nginx
+    
+  
+  
