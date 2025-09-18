@@ -6,10 +6,19 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-    
+      - name: removenginx
+        run: sudo rm -rf /var/www/html/*
       - name: clone code
         uses: actions/checkout@v5.0.0
+      - name: updatevarfile
+        run: sudo cp -rf * /var/www/html/.
+       
+      - name: ecom
+        uses: actions/checkout@v5.0.0
     
+     
+      - name: restart nginx
+        run: sudo systemctl restart nginx
     
   
   
